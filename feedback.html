@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Form</title>
+</head>
+<body>
+  <h2>Feedback Form</h2>
+  <div id="formContainer">Loading...</div>
+
+  <script type="module">
+    const slug = new URLSearchParams(window.location.search).get("slug");
+
+    const { createClient } = await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm");
+
+    const supabase = createClient(
+      "https://ortqxtfognuwkegcwini.supabase.co", // 🔁 replace this
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ydHF4dGZvZ251d2tlZ2N3aW5pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQzMjQ5MTYsImV4cCI6MjA2OTkwMDkxNn0.tJ8bnNnfXWxNslWuuD4nzcxWqJy6CW_h33-hXwPXGe8"                        // 🔁 replace this
+    );
+
+    const { data, error } = await supabase
+      .from('forms')
+      .select('html')
+      .eq('slug', slug)
+      .single();
+
+    if (error || !data) {
+      document.getElementById("formContainer").innerText = "Form not found.";
+    } else {
+      document.getElementById("formContainer").innerHTML = data.html;
+
+      const form = document.getElementById("feedbackForm");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const answers = {};
+        formData.forEach((value, key) => answers[key] = value);
+
+        const { error: insertError } = await supabase
+          .from('responses')
+          .insert([{ form_slug: slug, answers }]);
+
+        if (insertError) {
+          alert("Something went wrong. Try again.");
+        } else {
+          alert("Thank you for your feedback!");
+          form.reset();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
