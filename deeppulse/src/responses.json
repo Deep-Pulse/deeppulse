@@ -1,0 +1,124 @@
+[
+  {
+    "id": "0afac049-94fa-4e72-9616-307bd2d04f66",
+    "form_slug": "02df743e-1a14-4dff-8675-4b13bcaff31d",
+    "answers": {
+      "undefined": "Not at all well"
+    },
+    "submitted_at": null,
+    "knowledge_transfer": null,
+    "leadership_support": null,
+    "workload_priorities": null,
+    "skill_readliness": null,
+    "role_clarity": null,
+    "resources_tools": null
+  },
+  {
+    "id": "47502458-7b67-49c9-9c5d-b99c50cd7b8f",
+    "form_slug": "02df743e-1a14-4dff-8675-4b13bcaff31d",
+    "answers": {
+      "skill_confidence": "4",
+      "role_understanding": "sz",
+      "essential_resources": "Code review platforms (GitHub, GitLab, etc.)",
+      "workload_prioritization": "5",
+      "knowledge_transfer_smoothness": "4"
+    },
+    "submitted_at": "2025-08-16",
+    "knowledge_transfer": {
+      "knowledge_transfer_smoothness": "4"
+    },
+    "leadership_support": null,
+    "workload_priorities": {
+      "workload_prioritization": "5"
+    },
+    "skill_readliness": {
+      "skill_confidence": "4"
+    },
+    "role_clarity": {
+      "role_understanding": "sz"
+    },
+    "resources_tools": {
+      "essential_resources": "Code review platforms (GitHub, GitLab, etc.)"
+    }
+  },
+  {
+    "id": "e52c669e-1cc4-4f77-bfc1-570299c4baea",
+    "form_slug": "086fd4b6-c398-49d0-873a-ba60ac2f45f8",
+    "answers": {
+      "role_clarity": "bv",
+      "skill_confidence": "5",
+      "team_integration": "Very well",
+      "workload_alignment": "5",
+      "resource_utilization": "fd"
+    },
+    "submitted_at": "2025-08-16",
+    "knowledge_transfer": null,
+    "leadership_support": null,
+    "workload_priorities": {
+      "workload_alignment": "5"
+    },
+    "skill_readliness": {
+      "skill_confidence": "5"
+    },
+    "role_clarity": {
+      "role_clarity": "bv"
+    },
+    "resources_tools": {
+      "resource_utilization": "fd"
+    }
+  },
+  {
+    "id": "6b90a53e-246f-483c-a2c7-1b6130048f44",
+    "form_slug": "02df743e-1a14-4dff-8675-4b13bcaff31d",
+    "answers": {
+      "skill_confidence": "4",
+      "role_understanding": "asdfg",
+      "essential_resources": "Code review platforms (GitHub, GitLab, etc.)",
+      "workload_prioritization": "4",
+      "knowledge_transfer_smoothness": "4"
+    },
+    "submitted_at": "2025-08-16",
+    "knowledge_transfer": {
+      "knowledge_transfer_smoothness": "4"
+    },
+    "leadership_support": null,
+    "workload_priorities": {
+      "workload_prioritization": "4"
+    },
+    "skill_readliness": {
+      "skill_confidence": "4"
+    },
+    "role_clarity": {
+      "role_understanding": "asdfg"
+    },
+    "resources_tools": {
+      "essential_resources": "Code review platforms (GitHub, GitLab, etc.)"
+    }
+  },
+  {
+    "id": "9ec124ca-5544-4cad-adb3-37830a544145",
+    "form_slug": "1365fad1-8da6-429f-8302-f5017d153f65",
+    "answers": {
+      "resource_access": "5",
+      "current_workload": "Slightly overwhelming",
+      "priority_clarity": "4",
+      "manager_communication": "good",
+      "manager_support_level": "4"
+    },
+    "submitted_at": "2025-08-18",
+    "knowledge_transfer": null,
+    "leadership_support": {
+      "manager_communication": "good",
+      "manager_support_level": "4"
+    },
+    "workload_priorities": {
+      "current_workload": "Slightly overwhelming",
+      "priority_clarity": "4"
+    },
+    "skill_readliness": null,
+    "role_clarity": null,
+    "resources_tools": {
+      "resource_access": "5"
+    }
+  }
+]
