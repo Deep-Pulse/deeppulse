@@ -20,6 +20,16 @@ export default function QuestionGeneration({ groupId, onNavigate }) {
         ])
     }
 
+    // Remove option from MCQ
+    const removeOption = (qIndex, optIndex) => {
+  setQuestions((prev) => {
+    const updated = [...prev]
+    updated[qIndex].options = updated[qIndex].options.filter((_, i) => i !== optIndex)
+    return updated
+  })
+}
+
+
     // Update question field
     const updateQuestion = (index, field, value) => {
         const updated = [...questions]
@@ -125,23 +135,31 @@ export default function QuestionGeneration({ groupId, onNavigate }) {
                     )}
 
                     {/* MCQ Options */}
-                    {q.type === "mcq" && (
-            <div style={styles.optionsBox}>
-              {q.options.map((opt, optIndex) => (
-                <input
-                  key={optIndex}
-                  type="text"
-                  placeholder={`Option ${optIndex + 1}`}
-                  value={opt}
-                  onChange={(e) => updateOption(index, optIndex, e.target.value)}
-                  style={styles.input}
-                />
-              ))}
-              <button style={styles.smallBtn} onClick={() => addOption(index)}>
-                + Add Option
-              </button>
-            </div>
-          )}
+                    
+{q.type === "mcq" && (
+  <div style={styles.optionsBox}>
+    {q.options.map((opt, optIndex) => (
+      <div key={optIndex} style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
+        <input
+          type="text"
+          placeholder={`Option ${optIndex + 1}`}
+          value={opt}
+          onChange={(e) => updateOption(index, optIndex, e.target.value)}
+          style={{ ...styles.input, flex: 1 }}
+        />
+        <button
+          style={styles.deleteSmallBtn}
+          onClick={() => removeOption(index, optIndex)}
+        >
+          ✕
+        </button>
+      </div>
+    ))}
+    <button style={styles.smallBtn} onClick={() => addOption(index)}>
+      + Add Option
+    </button>
+  </div>
+)}
 
 
                     {/* Fullwidth toggle */}
@@ -242,4 +260,12 @@ const styles = {
         borderRadius: "6px",
         cursor: "pointer",
     },
+    deleteSmallBtn: {
+  backgroundColor: "#f44336",
+  color: "white",
+  border: "none",
+  borderRadius: "4px",
+  cursor: "pointer",
+  padding: "4px 8px",
+}
 }
